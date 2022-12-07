@@ -1,12 +1,10 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-const FolderList = () => {
-    const data = require('../resorce/constant/templates.json');
-
+const TemplatesList = () => {
     return (
         <Text>Hello, I am your cat!</Text>
     );
 }
 
-export default FolderList;
+export default TemplatesList;
