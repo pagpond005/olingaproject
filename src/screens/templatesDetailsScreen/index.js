@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { EmptyFooter } from '../../components/Footer';
-import { RadioTemplate } from '../../components/RadioTemplate';
 import { colors } from '../../resorce/color';
 import { handleTemplate } from '../../resorce/function';
 
 const TemplatesDetails = ({ route }) => {
-    const [mainRadio, setMainRadio] = useState(null)
     const { children } = route.params
 
     const renderItem = ({ item }) => {

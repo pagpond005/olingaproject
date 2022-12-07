@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet, Text, View } from "react-native"
 import React, { useState } from 'react';
 
-import RadioForm, { RadioButton, RadioButtonInput, RadioButtonLabel } from 'react-native-simple-radio-button';
+import RadioForm from 'react-native-simple-radio-button';
 import { width } from "../resorce/normalize";
 import { colors } from "../resorce/color";
 import { handleTemplate } from "../resorce/function";

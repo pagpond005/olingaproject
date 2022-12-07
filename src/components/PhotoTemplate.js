@@ -2,15 +2,13 @@ import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from "react
 import React, { useState } from 'react';
 import { colors } from "../resorce/color";
 import { width } from "../resorce/normalize";
-import { handleTemplate } from "../resorce/function";
-import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+import { launchImageLibrary } from 'react-native-image-picker';
 
 export const PhotoTemplate = ({ item }) => {
     const [picture, setPicture] = useState([])
 
     const openGallerry = async () => {
         const result = await launchImageLibrary();
-        console.log(picture.length);
         if (picture.length > 4) {
             setPicture([result.assets[0].uri, ...picture].filter((e, index) => index < 5))
         }
