@@ -10,8 +10,8 @@ const TemplatesList = ({ navigation, route }) => {
 
 
     const renderFolder = ({ item }) => {
-        const { children } = item.children
-        return <TouchableOpacity onPress={() => navigation.navigate('Detail', { template: children })} style={styles.listStyle}>
+        const { children } = item
+        return <TouchableOpacity onPress={() => navigation.navigate('Detail', { children: children })} style={styles.listStyle}>
             <Text style={styles.listText}>{item.name}</Text>
         </TouchableOpacity>
     }

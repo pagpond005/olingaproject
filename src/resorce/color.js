@@ -1,3 +1,4 @@
 export const colors = {
-    white: 'white'
+    white: 'white',
+    red: 'red'
 }
