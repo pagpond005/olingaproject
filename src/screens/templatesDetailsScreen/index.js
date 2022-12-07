@@ -1,10 +1,18 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 const TemplatesDetails = () => {
     return (
-        <Text>Hello, I am your cat!</Text>
+        <View style={styles.container}>
+            <Text>Hello, I am your cat!</Text>
+        </View>
     );
 }
 
 export default TemplatesDetails;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    }
+})
