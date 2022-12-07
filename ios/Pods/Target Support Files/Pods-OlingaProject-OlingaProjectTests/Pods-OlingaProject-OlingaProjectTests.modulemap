@@ -1,0 +1,6 @@
+module Pods_OlingaProject_OlingaProjectTests {
+  umbrella header "Pods-OlingaProject-OlingaProjectTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

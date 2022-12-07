@@ -1,0 +1,221 @@
+{
+	"data": [
+		{
+			"id": 1,
+			"type": "formFolder",
+			"attributes": {
+				"id": 1,
+				"name": "Folder sample",
+				"templates": [
+					{
+						"id": 1,
+						"type": "template",
+						"name": "Template sample",
+						"children": [
+							{
+								"id": 1,
+								"type": "question",
+								"text": "Type of Report",
+								"question_type": "radio",
+								"order": 0,
+								"compulsory": true,
+								"question_options": [
+									{
+										"id": 1,
+										"template_question_id": 1,
+										"label": "Weekly"
+									},
+									{
+										"id": 2,
+										"template_question_id": 1,
+										"label": "Daily"
+									}
+								],
+								"children": [
+									{
+										"id": 1,
+										"type": "logic",
+										"value": "Daily",
+										"order": 0,
+										"template_question_id": 1,
+										"condition": "is equal: [Daily]",
+										"question_logic_option": {
+											"text": "is equal",
+											"expression_value": "is",
+											"question_type": "radio"
+										},
+										"children": [
+											{
+												"id": 1,
+												"type": "section",
+												"name": "Daily section",
+												"order": 0,
+												"children": [
+													{
+														"id": 2,
+														"type": "question",
+														"text": "Question boolean 1",
+														"question_type": "boolean",
+														"order": 0,
+														"compulsory": false,
+														"question_options": null,
+														"children": []
+													},
+													{
+														"id": 3,
+														"type": "question",
+														"text": "Question boolean 2",
+														"question_type": "boolean",
+														"order": 1,
+														"compulsory": false,
+														"question_options": null,
+														"children": []
+													}
+												]
+											},
+											{
+												"id": 4,
+												"type": "question",
+												"text": "Any issue?",
+												"question_type": "boolean",
+												"order": 2,
+												"compulsory": false,
+												"question_options": null,
+												"children": [
+													{
+														"id": 2,
+														"type": "logic",
+														"value": "Yes",
+														"order": 0,
+														"template_question_id": 4,
+														"condition": "is equal: [Yes]",
+														"question_logic_option": {
+															"text": "is equal",
+															"expression_value": "is",
+															"question_type": "boolean"
+														},
+														"children": [
+															{
+																"id": 5,
+																"type": "question",
+																"text": "What issue?",
+																"question_type": "input_text",
+																"order": 0,
+																"compulsory": true,
+																"question_options": null,
+																"children": []
+															},
+															{
+																"id": 6,
+																"type": "question",
+																"text": "Attach photos if any",
+																"question_type": "image",
+																"order": 1,
+																"compulsory": null,
+																"question_options": null,
+																"children": []
+															}
+														]
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": 3,
+										"type": "logic",
+										"value": "Weekly",
+										"order": 1,
+										"template_question_id": 1,
+										"condition": "is equal: [Weekly]",
+										"question_logic_option": {
+											"text": "is equal",
+											"expression_value": "is",
+											"question_type": "radio"
+										},
+										"children": [
+											{
+												"id": 2,
+												"type": "section",
+												"name": "Weekly section",
+												"order": 0,
+												"children": [
+													{
+														"id": 7,
+														"type": "question",
+														"text": "Boolean 3",
+														"question_type": "boolean",
+														"order": 1,
+														"compulsory": true,
+														"question_options": null,
+														"children": []
+													},
+													{
+														"id": 8,
+														"type": "question",
+														"text": "Boolean 4",
+														"question_type": "boolean",
+														"order": 2,
+														"compulsory": true,
+														"question_options": null,
+														"children": []
+													}
+												]
+											},
+											{
+												"id": 9,
+												"type": "question",
+												"text": "There is any feedback to report?",
+												"question_type": "boolean",
+												"order": 3,
+												"compulsory": false,
+												"question_options": null,
+												"children": [
+													{
+														"id": 4,
+														"type": "logic",
+														"value": "Yes",
+														"order": 0,
+														"template_question_id": 9,
+														"condition": "is equal: [Yes]",
+														"question_logic_option": {
+															"text": "is equal",
+															"expression_value": "is",
+															"question_type": "boolean"
+														},
+														"children": [
+															{
+																"id": 10,
+																"type": "question",
+																"text": "What issue?",
+																"question_type": "input_text",
+																"order": 0,
+																"compulsory": null,
+																"question_options": null,
+																"children": []
+															},
+															{
+																"id": 11,
+																"type": "question",
+																"text": "Attach photos if any",
+																"question_type": "image",
+																"order": 1,
+																"compulsory": true,
+																"question_options": null,
+																"children": []
+															}
+														]
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		}
+	]
+}

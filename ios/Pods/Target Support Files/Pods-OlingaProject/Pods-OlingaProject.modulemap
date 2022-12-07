@@ -1,0 +1,6 @@
+module Pods_OlingaProject {
+  umbrella header "Pods-OlingaProject-umbrella.h"
+
+  export *
+  module * { export * }
+}
