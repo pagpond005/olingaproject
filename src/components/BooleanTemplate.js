@@ -19,7 +19,11 @@ export const BooleanTemplate = ({ item }) => {
     }
     return <View style={styles.bigcontainer}>
         <View style={styles.container}>
-            <Text>{item.text}</Text>
+            <View style={styles.headerContainer}>
+                <Text style={styles.styleText}>{item.text}</Text>
+                {!!item.compulsory && <Text style={{ ...styles.styleText, color: colors.blue }}>{'*Required*'}</Text>}
+            </View>
+
             <TouchableOpacity onPress={() => setValue('Yes')}><Text>yes</Text></TouchableOpacity>
 
             <TouchableOpacity onPress={() => setValue('No')}><Text>no</Text></TouchableOpacity>
@@ -45,4 +49,9 @@ const styles = StyleSheet.create({
         marginTop: 20,
         padding: 10
     },
+    headerContainer: {
+        flexDirection: 'row',
+        flex: 1,
+        justifyContent: 'space-between'
+    }
 })

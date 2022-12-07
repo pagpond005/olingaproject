@@ -8,7 +8,10 @@ export const TextinputTemplate = ({ item }) => {
     const [text, onChangeText] = useState("");
 
     return <View style={styles.container}>
-        <Text>{item.text}</Text>
+        <View style={styles.headerContainer}>
+            <Text style={styles.styleText}>{item.text}</Text>
+            {!!item.compulsory && <Text style={{ ...styles.styleText, color: colors.blue }}>{'*Required*'}</Text>}
+        </View>
 
         <TextInput
             style={styles.input}
@@ -32,4 +35,9 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginTop: 10,
     },
+    headerContainer: {
+        flexDirection: 'row',
+        flex: 1,
+        justifyContent: 'space-between'
+    }
 })

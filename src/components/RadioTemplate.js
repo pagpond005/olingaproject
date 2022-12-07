@@ -22,7 +22,11 @@ export const RadioTemplate = ({ radio_props, item }) => {
     return (
         <View style={styles.bigcontainer}>
             <View style={styles.container}>
-                <Text style={styles.styleText}>{item.text}</Text>
+                <View style={styles.headerContainer}>
+                    <Text style={styles.styleText}>{item.text}</Text>
+                    {!!item.compulsory && <Text style={{ ...styles.styleText, color: colors.blue }}>{'*Required*'}</Text>}
+                </View>
+
                 <RadioForm
                     radio_props={radio_props}
                     initial={null}
@@ -55,5 +59,10 @@ const styles = StyleSheet.create({
     },
     styleText: {
         paddingBottom: 20
+    },
+    headerContainer: {
+        flexDirection: 'row',
+        flex: 1,
+        justifyContent: 'space-between'
     }
 })
