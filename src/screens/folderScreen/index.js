@@ -12,7 +12,7 @@ const FolderList = ({ navigation }) => {
     const renderFolder = ({ item }) => {
         const template = item.attributes.templates
 
-        return <TouchableOpacity onPress={() => navigation.navigate('List', { template: template })} style={styles.folderStyle}>
+        return <TouchableOpacity onPress={() => navigation.navigate('List', { template })} style={styles.folderStyle}>
             <Text style={styles.folderText}>{item.attributes.name}</Text>
         </TouchableOpacity>
     }

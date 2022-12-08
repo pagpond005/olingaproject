@@ -2,7 +2,6 @@ import { StyleSheet, Text, TextInput, View } from "react-native"
 import React, { useState } from 'react';
 import { colors } from "../resorce/color";
 import { width } from "../resorce/normalize";
-import { handleTemplate } from "../resorce/function";
 import { size } from "../resorce/size";
 
 export const TextinputTemplate = ({ item }) => {

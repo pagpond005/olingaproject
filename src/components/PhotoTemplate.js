@@ -11,12 +11,7 @@ export const PhotoTemplate = ({ item }) => {
 
     const openGallerry = async () => {
         const result = await launchImageLibrary();
-        if (picture.length > 4) {
-            setPicture([result.assets[0].uri, ...picture].filter((e, index) => index < 5))
-        }
-        else {
-            setPicture([result.assets[0].uri, ...picture])
-        }
+        setPicture([result.assets[0].uri, ...picture])
     }
 
     const renderClose = (delIndex) => {
@@ -41,7 +36,7 @@ export const PhotoTemplate = ({ item }) => {
             {!!item.compulsory && <Text style={{ ...styles.styleText, color: colors.blue }}>{'*Required*'}</Text>}
         </View>
 
-        {picture.length < 5 && <TouchableOpacity style={styles.cameraContainer} onPress={() => openGallerry()} >
+        {picture.length < 5 && <TouchableOpacity style={styles.cameraContainer} onPress={() => openGallerry()}>
             <Image style={styles.cameraImg} source={image.camera} />
             <Text>Select Photo</Text>
         </TouchableOpacity>}
