@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, KeyboardAvoidingView, Platform, StyleSheet, View } from 'react-native';
 import { EmptyFooter } from '../../components/Footer';
 import { colors } from '../../resorce/color';
 import { handleTemplate } from '../../resorce/function';
@@ -12,13 +12,16 @@ const TemplatesDetails = ({ route }) => {
     }
 
     return (
-        <View style={styles.container}>
+        <KeyboardAvoidingView
+            keyboardVerticalOffset={100}
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={styles.container}>
             <FlatList
                 data={children}
                 renderItem={renderItem}
                 ListFooterComponent={<EmptyFooter />}
             />
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 
