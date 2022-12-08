@@ -1,11 +1,12 @@
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import React, { useState } from 'react';
 import { handleTemplate } from "../resorce/function";
 import { width } from "../resorce/normalize";
 import { colors } from "../resorce/color";
+import { image } from "../resorce/image";
 
 export const BooleanTemplate = ({ item }) => {
-    const [booleanValue, setValue] = useState('No')
+    const [booleanValue, setValue] = useState(null)
 
     const renderItem = ({ item }) => {
         return (
@@ -24,9 +25,15 @@ export const BooleanTemplate = ({ item }) => {
                 {!!item.compulsory && <Text style={{ ...styles.styleText, color: colors.blue }}>{'*Required*'}</Text>}
             </View>
 
-            <TouchableOpacity onPress={() => setValue('Yes')}><Text>yes</Text></TouchableOpacity>
+            <View style={styles.imgContainer}>
+                <TouchableOpacity onPress={() => setValue('Yes')}>
+                    <Image style={{ ...styles.imgStyle, tintColor: booleanValue === 'Yes' ? colors.blue : colors.black }} source={image.yes} />
+                </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => setValue('No')}><Text>no</Text></TouchableOpacity>
+                <TouchableOpacity onPress={() => setValue('No')}>
+                    <Image style={{ ...styles.imgStyle, tintColor: booleanValue === 'No' ? colors.blue : colors.black }} source={image.no} />
+                </TouchableOpacity>
+            </View>
         </View>
 
         {item.children.length > 0 &&
@@ -53,5 +60,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flex: 1,
         justifyContent: 'space-between'
+    },
+    imgStyle: {
+        width: 40,
+        height: 40,
+    },
+    imgContainer: {
+        flexDirection: 'row',
+        flex: 1,
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        marginTop: 10,
     }
 })
