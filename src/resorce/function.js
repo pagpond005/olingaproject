@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import { RadioTemplate } from '../components/RadioTemplate';
-import { colors } from '../../resorce/color';
 import { SectionTemplate } from '../components/SectionTemplate';
 import { BooleanTemplate } from '../components/BooleanTemplate';
 import { TextinputTemplate } from '../components/TextinputTemplate';
@@ -18,34 +17,26 @@ export const handleTemplate = (item) => {
                 let radio_props = []
                 item.question_options.forEach(e => radio_props.push({ label: e.label, value: e.label }))
                 return (
-                    <View>
-                        <RadioTemplate item={item} radio_props={radio_props} />
-                    </View>
+                    <RadioTemplate item={item} radio_props={radio_props} />
                 )
             }
             case 'boolean': {
                 return (
-                    <View>
-                        <BooleanTemplate item={item} />
-                    </View>
+                    <BooleanTemplate item={item} />
                 )
             }
             case 'input_text': {
                 return (
-                    <View>
-                        <TextinputTemplate item={item} />
-                    </View>
+                    <TextinputTemplate item={item} />
                 )
             }
             case 'image': {
                 return (
-                    <View>
-                        <PhotoTemplate item={item} />
-                    </View>
+                    <PhotoTemplate item={item} />
                 )
             }
             default: {
-                return <Text>asdasdas</Text>
+                return <View></View>
             }
         }
     }
@@ -56,5 +47,5 @@ export const handleTemplate = (item) => {
         </View>
     }
 
-    return <Text>asdasdas</Text>
+    return <View></View>
 }

@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, TextInput, View } from "react-native"
+import { StyleSheet, Text, TextInput, View } from "react-native"
 import React, { useState } from 'react';
 import { colors } from "../resorce/color";
 import { width } from "../resorce/normalize";

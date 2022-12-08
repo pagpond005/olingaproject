@@ -19,22 +19,38 @@ export const PhotoTemplate = ({ item }) => {
         }
     }
 
+    const renderClose = (delIndex) => {
+        return (
+            <TouchableOpacity onPress={() => setPicture(picture.filter((e, index) => index != delIndex))} style={styles.closeContainer}>
+                <Text style={styles.textClose}>X</Text>
+            </TouchableOpacity>
+        )
+    }
+    const renderAttachImg = ({ item, index }) => {
+        return (
+            <View style={styles.containerRenderImg}>
+                <Image source={{ uri: item }} style={styles.img} />
+                {renderClose(index)}
+            </View>
+        )
+    }
+
     return <View style={styles.container}>
         <View style={styles.headerContainer}>
             <Text style={styles.styleText}>{item.text}</Text>
             {!!item.compulsory && <Text style={{ ...styles.styleText, color: colors.blue }}>{'*Required*'}</Text>}
         </View>
 
-        <TouchableOpacity style={styles.cameraContainer} onPress={() => openGallerry()} >
+        {picture.length < 5 && <TouchableOpacity style={styles.cameraContainer} onPress={() => openGallerry()} >
             <Image style={styles.cameraImg} source={image.camera} />
             <Text>Select Photo</Text>
-        </TouchableOpacity>
+        </TouchableOpacity>}
 
         <FlatList
             showsHorizontalScrollIndicator={false}
             horizontal={true}
             data={picture}
-            renderItem={({ item }) => <Image source={{ uri: item }} style={styles.img} />}
+            renderItem={renderAttachImg}
         />
     </View>
 }
@@ -72,4 +88,21 @@ const styles = StyleSheet.create({
         fontWeight: '400',
         fontSize: size.big16
     },
+    closeContainer: {
+        width: 20,
+        height: 20,
+        borderRadius: 20,
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        backgroundColor: colors.black,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    textClose: {
+        color: colors.white
+    },
+    containerRenderImg: {
+        marginTop: 10
+    }
 })
