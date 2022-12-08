@@ -5,6 +5,7 @@ import RadioForm from 'react-native-simple-radio-button';
 import { width } from "../resorce/normalize";
 import { colors } from "../resorce/color";
 import { handleTemplate } from "../resorce/function";
+import { size } from "../resorce/size";
 
 export const RadioTemplate = ({ radio_props, item }) => {
     const [radioValue, setValue] = useState(null)
@@ -58,7 +59,9 @@ const styles = StyleSheet.create({
         padding: 10
     },
     styleText: {
-        paddingBottom: 20
+        paddingBottom: 20,
+        fontWeight: '400',
+        fontSize: size.big16
     },
     headerContainer: {
         flexDirection: 'row',

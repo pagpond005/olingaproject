@@ -4,6 +4,7 @@ import { handleTemplate } from "../resorce/function";
 import { width } from "../resorce/normalize";
 import { colors } from "../resorce/color";
 import { image } from "../resorce/image";
+import { size } from "../resorce/size";
 
 export const BooleanTemplate = ({ item }) => {
     const [booleanValue, setValue] = useState(null)
@@ -71,5 +72,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         marginTop: 10,
-    }
+    },
+    styleText: {
+        fontWeight: '400',
+        fontSize: size.big16
+    },
 })

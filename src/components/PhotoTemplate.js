@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { colors } from "../resorce/color";
 import { width } from "../resorce/normalize";
 import { launchImageLibrary } from 'react-native-image-picker';
+import { image } from "../resorce/image";
+import { size } from "../resorce/size";
 
 export const PhotoTemplate = ({ item }) => {
     const [picture, setPicture] = useState([])
@@ -23,7 +25,10 @@ export const PhotoTemplate = ({ item }) => {
             {!!item.compulsory && <Text style={{ ...styles.styleText, color: colors.blue }}>{'*Required*'}</Text>}
         </View>
 
-        <TouchableOpacity onPress={() => openGallerry()} ><Text>Open Gallerry</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.cameraContainer} onPress={() => openGallerry()} >
+            <Image style={styles.cameraImg} source={image.camera} />
+            <Text>Select Photo</Text>
+        </TouchableOpacity>
 
         <FlatList
             showsHorizontalScrollIndicator={false}
@@ -52,5 +57,19 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
         margin: 10
-    }
+    },
+    cameraImg: {
+        width: 50,
+        height: 50
+    },
+    cameraContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+        paddingVertical: 30
+    },
+    styleText: {
+        fontWeight: '400',
+        fontSize: size.big16
+    },
 })
